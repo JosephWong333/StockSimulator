@@ -63,7 +63,7 @@ function chooseRandomStock() {
 
 // Event listener to get coordinates from IP when the DOM is loaded
 chooseRandomStock();
-// window.addEventListener('DOMContentLoaded', getStockData(chosenStock, "2005-02-03"));
+window.addEventListener('DOMContentLoaded', getStockData(chosenStock, "2005-02-03"));
 
 document.getElementById('moneyValue').textContent = "Wallet: " + money;
 document.getElementById('yearDisplay').textContent = "Year: " + year;
@@ -87,7 +87,7 @@ function handleClick() {
 async function handleProfitProcess(_old_high, shares){
   let old_high = _old_high;
   let old_shares = shares;
-  // await getStockData(chosenStock, `${year}-02-03`);
+  await getStockData(chosenStock, `${year}-02-03`);
   document.getElementById('Results').textContent = `Results: In the next year, you sold your stock ${curr_symbol} and you made ${(curr_high - old_high) * shares}$`;
   money += (old_high * old_shares) + (curr_high - old_high) * old_shares;
   document.getElementById('moneyValue').textContent = "Wallet: " + money;
